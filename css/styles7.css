@@ -1,0 +1,61 @@
+nav {
+    background: blueviolet;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: blueviolet;
+
+}
+
+.container h1 {
+    margin-top: 0;
+}
+
+.container .meta {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.container .image {
+    max-width: 100%;
+    width : 300px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.container p {
+    margin-bottom: 10px;
+}
+
+.container .content {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.container .author {
+    font-weight: bold;
+}
+
+.date {
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .image {
+        max-height: 200px;
+    }
+}

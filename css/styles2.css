@@ -1,0 +1,80 @@
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Start of section element */
+
+section{
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section h1{
+    font-weight: bolder;
+    font-size: 24px;
+    margin: 10px 5px;
+
+}
+
+.first-column-news{
+    margin: 30px 0;
+}
+
+section p{
+    font-size: 18px;
+}
+
+.four-box{
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.box1 img{
+    max-width: 100%;
+}
+
+.four-box .one{
+    flex-basis: 24%;
+}
+
+.four-box .two{
+    flex-basis: 24%;
+}
+
+.four-box .three{
+    flex-basis: 24%;
+}
+
+.four-box .fourr{
+    flex-basis: 24%;
+}
+
+.down-bar{
+    color: rgba(240,0,0,0.7);
+}
+
+.box1 p:hover{
+    text-decoration: underline;
+    color: brown;
+    cursor: pointer;
+}
+
+.second-column-news{
+    margin: 30px 0;
+}
+
+.second-column-news .down-bar{
+    color: cornflowerblue;
+}
+
+.third-column-news{
+    margin: 30px 0;
+}
+
+.third-column-news .down-bar{
+    color: green;
+}
+
+/* End of section element */

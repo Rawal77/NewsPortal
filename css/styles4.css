@@ -1,0 +1,82 @@
+
+.news--{
+    width: 90vw;
+    margin: 10px 0;
+    margin-inline: auto;
+}
+
+
+#nation {
+    width: 100%;
+}
+
+.carousel-container {
+    width: 92vw;
+    margin: auto;
+    overflow-x: auto;
+    padding-bottom: 20px; /* Add some bottom padding to create space for the scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+.carousel {
+    display: flex;
+    padding-bottom: 10px; /* Add some bottom padding to create space for the scrollbar */
+}
+
+.carousel-item {
+    flex: 0 0 25%;
+    padding: 10px;
+}
+
+.box1 {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+
+.box1 img {
+    max-width: 100%;
+    height: 170px;
+}
+
+.box1 p {
+    margin-top: 10px;
+}
+
+.down-bar {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+/* Scrollbar Styles */
+.carousel-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .carousel-item {
+        flex: 0 0 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel-item {
+        flex: 0 0 100%;
+    }
+}

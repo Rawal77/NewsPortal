@@ -1,0 +1,11 @@
+.-linked{
+    /* color: hsl(209,61%,16%); */
+    color : olivedrab;
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+
+.linked:hover{
+    background: hsl(265,65%,90%);
+}
