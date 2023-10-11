@@ -1,7 +1,6 @@
 <?php
 
 include "config.php";
-include "../phpMailer.php";
 $post_id = $_GET['id'];
 $cat_id = $_GET['catid'];
 

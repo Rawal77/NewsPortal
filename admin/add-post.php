@@ -1,7 +1,7 @@
 <?php
 include "header.php";
 include "config.php";
-include "../phpMailer.php";
+
 
 if (isset($_POST['submit'])) {
     $title = mysqli_real_escape_string($con, $_POST['post_title']);
@@ -37,11 +37,11 @@ if (isset($_POST['submit'])) {
                     $error = "Image size should be less than 6mb";
                 } else {
                     move_uploaded_file($tmpname, "upload/" . $filename);
-                    $sql = "INSERT INTO post(title,description,post_date,post_img,category,users,isfeatured,status)
+                    $sql = "INSERT INTO post(title,description,post_date,post_img,category_id,user_id,isfeatured,status)
                     VALUES('$title','$desc','$date','$filename','$category','$author','$featured','$display');";
                     $sql .= "UPDATE category SET no_of_post = no_of_post +1 WHERE category_id = '$category'";
                     $sql2 = "SELECT * FROM post JOIN category ON post.category_id = category.category_id
-                    JOIN users ON post.user_id = users.user_id WHERE users='$author'";
+                    JOIN users ON post.user_id = users.user_id WHERE post.user_id='$author'";
                     $res = mysqli_query($con,$sql2);
                     $row = mysqli_fetch_assoc($res);
                     $username = $row['username'];
