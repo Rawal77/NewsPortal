@@ -97,7 +97,7 @@
         ?>
         <h2>Search: <?=$searchterm?></h2>
         <?php
-        $sql = "SELECT * FROM post JOIN category ON post.category = category.category_id JOIN users ON post.users = users.user_id WHERE post.title LIKE '%$searchterm%'";
+        $sql = "SELECT * FROM post JOIN category ON post.category_id = category.category_id JOIN users ON post.user_id = users.user_id WHERE post.title LIKE '%$searchterm%'";
         $result = mysqli_query($con,$sql);
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){

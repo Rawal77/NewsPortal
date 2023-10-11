@@ -109,7 +109,7 @@
         ?>
                 <h1><?= $row['title'] ?></h1>
                 <div class="meta">
-                    <a href="journalist.php?jid=<?= $row['users'] ?>">
+                    <a href="journalist.php?jid=<?= $row['user_id'] ?>">
                         <span class="author"><i class="bi bi-person-fill"></i> <?= $row['username'] ?></span>
                     </a>
                     | <span class="date" style="color: black;"><i class="bi bi-calendar-fill"> </i><?= $row['post_date'] ?></span>
