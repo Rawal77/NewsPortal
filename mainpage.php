@@ -65,7 +65,7 @@
                 include "./admin/config.php";
                 $sql = "SELECT DISTINCT category.*
                 FROM category
-                JOIN post ON category.category_id = post.category
+                JOIN post ON category.category_id = post.category_id
                 WHERE category.no_of_post > 0 AND post.status = 'accepted';
                 ";
                 $result = mysqli_query($con, $sql);
@@ -100,8 +100,8 @@
         <?php
         $postid = $_GET['id'];
         include "./admin/config.php";
-        $sql = "SELECT * FROM post JOIN category ON post.category = category.category_id
-            JOIN users ON post.users = users.user_id WHERE post.post_id = '$postid'";
+        $sql = "SELECT * FROM post JOIN category ON post.category_id = category.category_id
+            JOIN users ON post.user_id = users.user_id WHERE post.post_id = '$postid'";
         $result = mysqli_query($con, $sql) or die("Query Failed");
 
         if (mysqli_num_rows($result) > 0) {

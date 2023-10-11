@@ -5,7 +5,7 @@ include "./admin/config.php";
 // Fetch distinct categories that have accepted posts
 $sql = "SELECT DISTINCT category.category_id, category_name 
         FROM category 
-        JOIN post ON category.category_id = post.category 
+        JOIN post ON category.category_id = post.category_id
         WHERE no_of_post > 0 AND status='accepted'";
 
 $result = mysqli_query($con, $sql);
@@ -29,8 +29,8 @@ if (mysqli_num_rows($result) > 0) {
                     <?php
                     // Fetch posts for the current category
                     $postSql = "SELECT * FROM post 
-                                JOIN category ON post.category = category.category_id
-                                JOIN users ON post.users = users.user_id 
+                                JOIN category ON post.category_id = category.category_id
+                                JOIN users ON post.user_id = users.user_id 
                                 WHERE status='accepted' AND category_name = '{$categoryName}' 
                                 ORDER BY post.post_id DESC";
                     $postResult = mysqli_query($con, $postSql) or die("Query Failed");

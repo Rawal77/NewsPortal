@@ -16,8 +16,8 @@ unlink("upload/".$row['post_img']);
 
 $sql = "DELETE FROM post WHERE post_id=$post_id;";
 $sql .= "UPDATE category SET no_of_post = no_of_post -1 WHERE category_id = $cat_id";
-$sql2 = "SELECT * FROM post JOIN category ON post.category = category.category_id
-    JOIN users ON post.users = users.user_id WHERE post_id='$post_id'";
+$sql2 = "SELECT * FROM post JOIN category ON post.category_id = category.category_id
+    JOIN users ON post.user_id = users.user_id WHERE post_id='$post_id'";
     $res2 = mysqli_query($con,$sql2);
     $row2 = mysqli_fetch_assoc($res2);
     $username = $row2['username'];

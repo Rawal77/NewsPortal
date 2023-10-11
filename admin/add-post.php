@@ -40,8 +40,8 @@ if (isset($_POST['submit'])) {
                     $sql = "INSERT INTO post(title,description,post_date,post_img,category,users,isfeatured,status)
                     VALUES('$title','$desc','$date','$filename','$category','$author','$featured','$display');";
                     $sql .= "UPDATE category SET no_of_post = no_of_post +1 WHERE category_id = '$category'";
-                    $sql2 = "SELECT * FROM post JOIN category ON post.category = category.category_id
-                    JOIN users ON post.users = users.user_id WHERE users='$author'";
+                    $sql2 = "SELECT * FROM post JOIN category ON post.category_id = category.category_id
+                    JOIN users ON post.user_id = users.user_id WHERE users='$author'";
                     $res = mysqli_query($con,$sql2);
                     $row = mysqli_fetch_assoc($res);
                     $username = $row['username'];

@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
     }else if(empty($role)){
         $error = "Role is required";
     }else{
-        $sql = "UPDATE users SET first_name='$fname', last_name='$lname', username='$uname', role='$role', category = '$category' WHERE user_id='$userid'";
+        $sql = "UPDATE users SET first_name='$fname', last_name='$lname', username='$uname', role='$role', category_id = '$category' WHERE user_id='$userid'";
         if(mysqli_query($con,$sql)){
             header("Location: $hostname/admin/users.php");
         }

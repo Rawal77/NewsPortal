@@ -25,7 +25,7 @@ if (isset($_POST['update'])) {
     }
     $sql = "UPDATE post SET title='{$_POST["post_title"]}', description='{$_POST["postdesc"]}',category={$_POST["category"]},post_img='$filename',isfeatured='{$_POST["featured"]}',status='{$_POST["status"]}' WHERE post_id={$_POST["post_id"]}";
     $sql2 = "SELECT * FROM post JOIN category ON post.category = category.category_id
-    JOIN users ON post.users = users.user_id WHERE post_id={$_POST["post_id"]}";
+    JOIN users ON post.user_id = users.user_id WHERE post_id={$_POST["post_id"]}";
     $res2 = mysqli_query($con,$sql2);
     $row2 = mysqli_fetch_assoc($res2);
     $username = $row2['username'];

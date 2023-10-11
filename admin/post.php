@@ -11,15 +11,15 @@
       include "config.php";
       if ($_SESSION['role'] == '3') {
         $sql = "SELECT * FROM post JOIN category ON post.category = category.category_id
-        JOIN users ON post.users = users.user_id ORDER BY post.post_id DESC";
+        JOIN users ON post.user_id = users.user_id ORDER BY post.post_id DESC";
       } else if ($_SESSION['role'] == '1') {
         $sql = "SELECT * FROM post JOIN category ON post.category = category.category_id
-        JOIN users ON post.users = users.user_id WHERE post.users={$_SESSION['user_id']} ORDER BY post.post_id DESC";
+        JOIN users ON post.user_id = users.user_id WHERE post.users={$_SESSION['user_id']} ORDER BY post.post_id DESC";
       } else if ($_SESSION['role'] == '2') {
 
         $sql = "SELECT *
         FROM post
-        JOIN category ON post.category = category.category_id JOIN users ON post.users = users.user_id
+        JOIN category ON post.category_id = category.category_id JOIN users ON post.user_id = users.user_id
         WHERE category.category_id IN (
             SELECT category
             FROM users

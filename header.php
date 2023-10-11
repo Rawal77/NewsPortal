@@ -80,7 +80,7 @@
 
           $sql = "SELECT DISTINCT category.*
 FROM category
-JOIN post ON category.category_id = post.category
+JOIN post ON category.category_id = post.category_id
 WHERE category.no_of_post > 0 AND post.status = 'accepted'";
 
           $result = mysqli_query($con, $sql);
@@ -123,7 +123,7 @@ WHERE category.no_of_post > 0 AND post.status = 'accepted'";
         // Modify the SQL query to select featured categories
         $sql_featured = "SELECT DISTINCT category.*
                      FROM category
-                     JOIN post ON category.category_id = post.category
+                     JOIN post ON category.category_id = post.category_id
                      WHERE category.no_of_post > 0 AND post.isfeatured = 'YES'";
 
         $result_featured = mysqli_query($con, $sql_featured);

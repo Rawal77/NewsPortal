@@ -61,7 +61,7 @@
                 include "./admin/config.php";
                 $sql = "SELECT DISTINCT category.*
                 FROM category
-                JOIN post ON category.category_id = post.category
+                JOIN post ON category.category_id = post.category_id
                 WHERE category.no_of_post > 0 AND post.status = 'accepted';
                 ";
                 $result = mysqli_query($con, $sql);

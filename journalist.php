@@ -13,7 +13,7 @@ include "header2.php";
 ?>
         <h1><?= $username ?></h1>
         <?php }
-        $sql = "SELECT * FROM post JOIN category ON post.category=category.category_id JOIN users ON post.users = users.user_id WHERE post.users = '$authid'";
+        $sql = "SELECT * FROM post JOIN category ON post.category_id=category.category_id JOIN users ON post.user_id = users.user_id WHERE post.user_id = '$authid'";
         $result = mysqli_query($con, $sql) or die("Query Failed");
         while($row = mysqli_fetch_assoc($result)){
             
