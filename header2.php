@@ -50,7 +50,9 @@
         <div class="nav-center">
             <!-- nav header -->
             <div class="nav-header">
+                <a href="index.php">
                 <img src="./images/logo.svg" alt="logo" class="logo">
+                </a>
                 <button class="nav-toggle">
                     <i class="fas fa-bars"></i>
                 </button>

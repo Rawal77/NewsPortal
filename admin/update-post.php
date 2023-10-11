@@ -24,7 +24,7 @@ if (isset($_POST['update'])) {
         move_uploaded_file($tmpname, "upload/" . $filename);
     }
     $sql = "UPDATE post SET title='{$_POST["post_title"]}', description='{$_POST["postdesc"]}',category={$_POST["category"]},post_img='$filename',isfeatured='{$_POST["featured"]}',status='{$_POST["status"]}' WHERE post_id={$_POST["post_id"]}";
-    $sql2 = "SELECT * FROM post JOIN category ON post.category = category.category_id
+    $sql2 = "SELECT * FROM post JOIN category ON post.category_id = category.category_id
     JOIN users ON post.user_id = users.user_id WHERE post_id={$_POST["post_id"]}";
     $res2 = mysqli_query($con,$sql2);
     $row2 = mysqli_fetch_assoc($res2);
@@ -51,8 +51,8 @@ if (isset($_POST['update'])) {
 
         include "config.php";
         $post_id = $_GET['id'];
-        $sql = "SELECT * FROM post JOIN category ON post.category = category.category_id
-        JOIN users ON post.users = users.user_id WHERE post.post_id='$post_id'";
+        $sql = "SELECT * FROM post JOIN category ON post.category_id = category.category_id
+        JOIN users ON post.user_id = users.user_id WHERE post.post_id='$post_id'";
         $result = mysqli_query($con, $sql) or die('Query Failed');
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -71,7 +71,7 @@ if (isset($_POST['update'])) {
                         <label for="description">Description</label>
                     </div>
                     <div class="form-floating mb-3 d-none">
-                        <input type="hidden" name="category" value="<?=$row['category']?>">
+                        <input type="hidden" name="category" value="<?=$row['category_id']?>">
                     </div>
 
 

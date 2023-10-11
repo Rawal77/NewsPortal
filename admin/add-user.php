@@ -31,7 +31,7 @@ if (isset($_POST['save'])) {
         if (mysqli_num_rows($result) > 0) {
             $error = "Username already exist's";
         } else {
-            $sql1 = "INSERT INTO users(first_name,last_name,username,password,role,category) VALUES ('$fname','$lname','$user','$password','$role','$category')";
+            $sql1 = "INSERT INTO users(first_name,last_name,username,password,role,category_id) VALUES ('$fname','$lname','$user','$password','$role','$category')";
             if (mysqli_query($con, $sql1)) {
                 header("Location: {$hostname}/admin/users.php");
             }

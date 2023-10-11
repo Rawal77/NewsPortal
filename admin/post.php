@@ -10,10 +10,10 @@
       <?php
       include "config.php";
       if ($_SESSION['role'] == '3') {
-        $sql = "SELECT * FROM post JOIN category ON post.category = category.category_id
+        $sql = "SELECT * FROM post JOIN category ON post.category_id = category.category_id
         JOIN users ON post.user_id = users.user_id ORDER BY post.post_id DESC";
       } else if ($_SESSION['role'] == '1') {
-        $sql = "SELECT * FROM post JOIN category ON post.category = category.category_id
+        $sql = "SELECT * FROM post JOIN category ON post.category_id = category.category_id
         JOIN users ON post.user_id = users.user_id WHERE post.users={$_SESSION['user_id']} ORDER BY post.post_id DESC";
       } else if ($_SESSION['role'] == '2') {
 
@@ -21,7 +21,7 @@
         FROM post
         JOIN category ON post.category_id = category.category_id JOIN users ON post.user_id = users.user_id
         WHERE category.category_id IN (
-            SELECT category
+            SELECT category_id
             FROM users
             WHERE user_id = {$_SESSION['user_id']}
         )
@@ -56,7 +56,7 @@
                   <a href="update-post.php?id=<?= $row['post_id'] ?>" class="text-warning"><i class="bi bi-pencil-square"></i></a>
                 </td>
                 <td>
-                  <a href="delete-post.php?id=<?= $row['post_id']; ?>&catid=<?=$row['category'];?>" class="text-danger"><i class="bi bi-trash3"></i></a>
+                  <a href="delete-post.php?id=<?= $row['post_id']; ?>&catid=<?=$row['category_id'];?>" class="text-danger"><i class="bi bi-trash3"></i></a>
                 </td>
               </tr>
             <?php } ?>

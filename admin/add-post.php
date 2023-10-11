@@ -82,9 +82,9 @@ if (isset($_POST['submit'])) {
                 $sql = "SELECT * FROM users WHERE user_id={$_SESSION['user_id']}";
                 $res = mysqli_query($con, $sql);
                 $row = mysqli_fetch_assoc($res);
-                $final = $row['category'];
+                $final = $row['category_id'];
                 ?>
-                <input type="hidden" class="form-control" name="category" id="formId1" value="<?= $row['category'] ?>">
+                <input type="hidden" class="form-control" name="category" id="formId1" value="<?= $row['category_id'] ?>">
                 <label for="formId1">Name</label>
             </div>
 
