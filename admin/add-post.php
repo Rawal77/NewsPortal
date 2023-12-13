@@ -28,7 +28,8 @@ if (isset($_POST['submit'])) {
             $filesize = $_FILES['fileUpload']['size'];
             $tmpname = $_FILES['fileUpload']['tmp_name'];
             $filename = $_FILES['fileUpload']['name'];
-            $fileext = end(explode('.', $filename));
+            $fileParts = explode('.', $filename);
+            $fileext = end($fileParts);
             $ext = ['jpg', 'jpeg', 'png', 'gif'];
 
 
